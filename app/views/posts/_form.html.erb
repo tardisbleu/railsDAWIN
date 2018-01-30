@@ -1,0 +1,19 @@
+<%= form_for @post, url: new_post_path do |form| %>
+  <p>
+    <%= form.label :titre %><br>
+    <%= form.text_field :titre %>
+  </p>
+
+
+  <% if @post.errors.any? %>
+    <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
