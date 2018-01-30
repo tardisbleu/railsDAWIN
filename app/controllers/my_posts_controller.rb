@@ -1,9 +1,11 @@
 class MyPostsController < ApplicationController
+    before_action :authenticate_user!
     def new
         @post = MyPost.new
     end
     def create
         @post = MyPost.new(post_params)
+        @post.user = current_user
         if @post.save
             redirect_to my_post_path(@post)
         else
@@ -15,9 +17,11 @@ class MyPostsController < ApplicationController
     end
     def edit
       @post = MyPost.find(params[:id])
+      redirect_to my_posts_path if !@post.user == current_user
     end
     def update
       @post = MyPost.find(params[:id])
+      redirect_to my_posts_path if !@post.user == current_user
       if @post.update(post_params)
         redirect_to my_post_path(@post)
       else
@@ -30,6 +34,7 @@ class MyPostsController < ApplicationController
     end
     def destroy
       @post = MyPost.find(params[:id])
+      redirect_to my_posts_path if !@post.user == current_user
       @post.destroy
       redirect_to my_posts_path
     end

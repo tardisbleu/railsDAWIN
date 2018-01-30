@@ -6,7 +6,7 @@ class CreateMyPosts < ActiveRecord::Migration
       t.string :chapeau
       t.string :vignette
       t.string :auteur
-
+      t.integer :user_id
       t.timestamps null: false
     end
   end

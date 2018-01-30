@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'my_posts#index'
+  devise_for :users
   #Added routes
   resources :my_posts, path: :posts
 
