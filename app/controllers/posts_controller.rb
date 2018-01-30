@@ -5,4 +5,8 @@ class PostsController < ApplicationController
     def create
 
     end
+
+    def index
+      @posts = MyPost.all
+    end
 end
