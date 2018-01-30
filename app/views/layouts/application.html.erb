@@ -8,6 +8,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">BLOG</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <% if current_user.present? %>
+          <li><%= link_to "logout", destroy_user_session_path %></li>
+        <% else %>
+          <li><%= link_to "login", new_user_session_path %></li>
+          <li><%= link_to "signin",new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 <%= yield %>
