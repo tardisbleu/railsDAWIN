@@ -21,9 +21,9 @@
 <br/><br/>
 <hr/>
 <br/>
-<%= link_to 'Editer', edit_post_path(@post) %>
+<%= link_to 'Editer', edit_my_post_path(@post) %>
 
-<%= link_to 'Supprimer', post_path(@post),method: :delete,
+<%= link_to 'Supprimer', my_post_path(@post),method: :delete,
       data: { confirm: 'Êtes-vous sûr ?' } %>
 
-<%= link_to 'Retour', posts_path %>
+<%= link_to 'Retour', my_posts_path %>

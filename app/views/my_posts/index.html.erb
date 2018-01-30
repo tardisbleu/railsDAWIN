@@ -16,9 +16,9 @@
            <td><%= post.titre %></td>
            <td><%= post.date %></td>
            <td><%= post.chapeau %></td>
-           <td><%= post.vignette %></td>
+           <td><%= image_tag(post.vignette) %></td>
            <td><%= post.auteur %></td>
-           <td><%= link_to 'Afficher', post_path(user) %></td>
+           <td><%= link_to 'Afficher', my_post_path(post) %></td>
        </tr>
        <% end %>
    </tbody>
