@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130092752) do
+ActiveRecord::Schema.define(version: 21180109083218) do
 
   create_table "my_posts", force: :cascade do |t|
-    t.string   "titre"
+    t.string   "title"
     t.date     "date"
-    t.string   "chapeau"
-    t.string   "vignette"
-    t.string   "auteur"
+    t.string   "article"
+    t.string   "picture"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,6 +36,8 @@ ActiveRecord::Schema.define(version: 20180130092752) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "surname"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
