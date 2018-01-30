@@ -1,10 +1,9 @@
 class MyPost < ActiveRecord::Base
     belongs_to :user
-    validates :titre, presence: true
+    validates :title, presence: true
     validates :date, presence: true
-    validates :chapeau, presence: true
-    validates :vignette, presence: true
-    validates :auteur, presence: true
-    mount_uploader :vignette, VignetteUploader
+    validates :text, presence: true
+    validates :picture, presence: true
+    mount_uploader :picture, VignetteUploader
     validates :user_id, presence: true
 end
