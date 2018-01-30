@@ -1,25 +1,23 @@
-<table>
-   <caption>Nombre de posts: <%= @posts.count %> </caption>
-   <thead>
-       <tr>
-           <th>Titre</th>
-           <th>Date</th>
-           <th>Âge</th>
-           <th>Chapeau</th>
-           <th>Vignette</th>
-           <th>Afficher</th>
-       </tr>
-   </thead>
-   <tbody>
-       <% @posts.each do |post| %>
-       <tr>
-           <td><%= post.titre %></td>
-           <td><%= post.date %></td>
-           <td><%= post.chapeau %></td>
-           <td><%= image_tag(post.vignette) %></td>
-           <td><%= post.auteur %></td>
-           <td><%= link_to 'Afficher', my_post_path(post) %></td>
-       </tr>
-       <% end %>
-   </tbody>
-</table>
+<caption>Nombre de posts: <%= @posts.count %> </caption>
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <%= link_to my_post_path(post) do %>
+        <div class="col s6 m3">
+          <div class="card">
+            <div class="card-image">
+              <%= image_tag(post.vignette) %>
+              <span class="card-title"><b><%= post.titre %></b></span>
+            </div>
+            <div class="card-content">
+              <p class="black-text"><%= post.chapeau %> </p>
+            </div>
+            <div class="card-action">
+              <p class="black-text"> <%= post.auteur %> </p>
+              <p class="black-text"> <%= post.date %> </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+</div>
