@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-          <title>Post</title>
-          <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-          <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-          <%= csrf_meta_tags %>
-    </head>
-    <body>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-    </body>
+<head>
+  <title>Post</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material\Icons" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+<%= yield %>
+
+</body>
 </html>
