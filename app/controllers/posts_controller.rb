@@ -10,4 +10,8 @@ class PostsController < ApplicationController
             render 'new'
         end
     end
+
+    def index
+      @posts = MyPost.all
+    end
 end
