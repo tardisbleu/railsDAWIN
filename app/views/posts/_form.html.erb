@@ -3,7 +3,22 @@
     <%= form.label :titre %><br>
     <%= form.text_field :titre %>
   </p>
-
+  <p>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+  </p>
+  <p>
+    <%= form.label :chapeau %><br>
+    <%= form.text_field :chapeau %>
+  </p>
+  <p>
+    <%= form.label :vignette %><br>
+    <%= form.file_field :vignette %>
+  </p>
+  <p>
+    <%= form.label :auteur %><br>
+    <%= form.text_field :auteur %>
+  </p>
 
   <% if @post.errors.any? %>
     <ul>
