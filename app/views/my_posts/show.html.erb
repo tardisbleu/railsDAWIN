@@ -20,14 +20,14 @@
   </div>
   <div class"col s2">
     <%= link_to edit_user_my_post_path(@post.user,@post) do %>
-       <i class="material-icons">Edit</i>
+       <span>Editer</span>
     <%end%>
     <%= link_to user_my_post_path(@post.user,@post),method: :delete,
           data: { confirm: 'Êtes-vous sûr ?' } do %>
-       <i class="material-icons">Delete</i>
+         <span>Supprimer</span>
     <%end%>
-    <%= link_to user_my_posts_path do %>
-       <i class="material-icons">keyboard_backspace</i>
+    <%= link_to root_path do %>
+       <span>Retour</span>
     <%end%>
   </div>
 </div>
