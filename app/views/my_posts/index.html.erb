@@ -4,9 +4,9 @@
   <% @posts.each do |post| %>
     <%= link_to user_my_post_path(post.user,post) do %>
         <div class="col s6 m3">
-          <div class="card">
+          <div class="card" >
             <div class="card-image">
-              <%= image_tag(post.picture) %>
+              <%= image_tag(post.picture, class: "responsive-img") %>
             </div>
             <div class="card-content">
               <p class="black-text"><%= post.title %> </p>
@@ -19,4 +19,6 @@
         </div>
         <% end %>
     <% end %>
+
 </div>
+    <center><%= will_paginate @posts %></center>
