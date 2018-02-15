@@ -1,0 +1,24 @@
+<div class="row">
+    <h3> Profil de l'utilisateur </h3>
+    <p>Profil de <%= @user.fullname %></p>
+    <p>Email : <%= @user.email %></p>
+    <br/>
+    <% @user.my_posts.each do |post| %>
+      <%= link_to user_my_post_path(post.user,post) do %>
+          <div class="col s6 m3">
+            <div class="card">
+              <div class="card-image">
+                <%= image_tag(post.picture) %>
+              </div>
+              <div class="card-content">
+                <p class="black-text"><%= post.title %> </p>
+              </div>
+              <div class="card-action">
+                <p class="black-text"> <%= post.user.fullname %> </p>
+                <p class="black-text"> <%= post.created_at %> </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+      <% end %>
+</div>

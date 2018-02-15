@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable
     validates :first_name, presence: true
     validates :last_name, presence: true
-    has_many :posts
+    has_many :my_posts
     def fullname
         first_name+" "+last_name
     end

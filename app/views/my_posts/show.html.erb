@@ -11,7 +11,9 @@
     </p>
     <p>
       <strong>Auteur :</strong>
-      <%= @post.user.fullname %>
+      <%= link_to user_path(@post.user) do %>
+        <%= @post.user.fullname %>
+      <%end%>
     </p>
     <p>
       <strong>Date:</strong>
