@@ -7,7 +7,7 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem 'devise'
-
+gem 'will_paginate', '~> 3.1.0'
 
 gem 'materialize-sass'
 gem 'material_icons'
