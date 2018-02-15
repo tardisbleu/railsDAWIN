@@ -15,7 +15,9 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if current_user.present? %>
         <li><%= link_to "Créer un poste", new_user_my_post_path(current_user) %></li>
-          <li><%= current_user.fullname %></li>
+          <li><%= link_to user_path(current_user) do %>
+            <%= current_user.fullname %>
+          <%end%></li>
           <li><%= link_to "Déconnexion", destroy_user_session_path,method: :delete %></li>
         <% else %>
           <li><%= link_to "Connexion", new_user_session_path %></li>

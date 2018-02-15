@@ -36,7 +36,7 @@ class MyPostsController < ApplicationController
     end
 
     def index
-      @posts = MyPost.all.paginate(:page => params[:page], :per_page => 3)
+      @posts = MyPost.all.paginate(:page => params[:page], :per_page => 4)
     end
 
     def destroy
