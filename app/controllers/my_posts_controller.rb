@@ -2,6 +2,7 @@ class MyPostsController < ApplicationController
     before_action :authenticate_user!
     def new
         @post = MyPost.new
+        @post.user = current_user
     end
     def create
         @post = MyPost.new(post_params)
