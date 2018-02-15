@@ -21,12 +21,15 @@
     </p>
   </div>
   <div class"col s2">
-    <%= link_to edit_user_my_post_path(@post.user,@post) do %>
-       <span>Editer</span>
-    <%end%>
-    <%= link_to user_my_post_path(@post.user,@post),method: :delete,
-          data: { confirm: 'Êtes-vous sûr ?' } do %>
-         <span>Supprimer</span>
+
+    <% if @post.user == current_user %>
+      <%= link_to edit_user_my_post_path(@post.user,@post) do %>
+         <span>Editer</span>
+      <%end%>
+      <%= link_to user_my_post_path(@post.user,@post),method: :delete,
+            data: { confirm: 'Êtes-vous sûr ?' } do %>
+           <span>Supprimer</span>
+      <%end%>
     <%end%>
     <%= link_to root_path do %>
        <span>Retour</span>

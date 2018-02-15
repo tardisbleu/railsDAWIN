@@ -1,5 +1,6 @@
 class MyPostsController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!,only:["new","create","update","edit","destroy","post_params"]
+
 
     def new
         @post = MyPost.new
