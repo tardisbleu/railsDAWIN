@@ -2,19 +2,19 @@
 
 <div class="row">
   <% @posts.each do |post| %>
-    <%= link_to my_post_path(post) do %>
+    <%= link_to user_my_post_path(post.user,post) do %>
         <div class="col s6 m3">
           <div class="card">
             <div class="card-image">
-              <%= image_tag(post.vignette) %>
-              <span class="card-title"><b><%= post.titre %></b></span>
+              <%= image_tag(post.picture) %>
+              <span class="card-title"><b><%= post.title %></b></span>
             </div>
             <div class="card-content">
-              <p class="black-text"><%= post.chapeau %> </p>
+              <p class="black-text"><%= post.article %> </p>
             </div>
             <div class="card-action">
-              <p class="black-text"> <%= post.auteur %> </p>
-              <p class="black-text"> <%= post.date %> </p>
+              <p class="black-text"> <%= post.user.fullname %> </p>
+              <p class="black-text"> <%= post.created_at %> </p>
             </div>
           </div>
         </div>
