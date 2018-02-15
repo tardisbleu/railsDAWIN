@@ -14,10 +14,11 @@
 ActiveRecord::Schema.define(version: 21180109083218) do
 
   create_table "my_posts", force: :cascade do |t|
-    t.string   "title"
+    t.string   "titre"
     t.date     "date"
-    t.string   "article"
-    t.string   "picture"
+    t.string   "chapeau"
+    t.string   "vignette"
+    t.string   "auteur"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
