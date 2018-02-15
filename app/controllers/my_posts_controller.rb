@@ -40,6 +40,6 @@ class MyPostsController < ApplicationController
     end
 
     def post_params
-      params.require(:my_post).permit(:titre,:date,:chapeau,:vignette,:auteur)
+      params.require(:my_post).permit(:title,:date,:article,:picture,:user_id)
     end
 end
