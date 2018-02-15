@@ -1,33 +1,33 @@
-<p>
-  <h1><%= @post.title %></h1>
-</p>
-<p>
-  <%= image_tag(@post.picture) %>
-</p>
-<p>
-  <%= @post.article %>
-</p>
-<p>
-  <strong>Auteur :</strong>
-  <%= @post.user.fullname %>
-</p>
-<p>
-  <strong>Date:</strong>
-  <%= @post.created_at %>
-</p>
-
-
-
-<br/><br/>
-<hr/>
-<br/>
-<%= link_to edit_user_my_post_path(@post.user,@post) do %>
-   <i class="material-icons">Edit</i>
-<%end%>
-<%= link_to user_my_post_path(@post.user,@post),method: :delete,
-      data: { confirm: 'Êtes-vous sûr ?' } do %>
-   <i class="material-icons">Delete</i>
-<%end%>
-<%= link_to user_my_posts_path do %>
-   <i class="material-icons">keyboard_backspace</i>
-<%end%>
+<div class="row">
+  <div class="col s2">
+    <%= image_tag(@post.picture, class: "responsive-img") %>
+  </div>
+  <div class"col s8">
+    <p>
+      <h1><%= @post.title %></h1>
+    </p>
+    <p>
+      <%= @post.article %>
+    </p>
+    <p>
+      <strong>Auteur :</strong>
+      <%= @post.user.fullname %>
+    </p>
+    <p>
+      <strong>Date:</strong>
+      <%= @post.created_at %>
+    </p>
+  </div>
+  <div class"col s2">
+    <%= link_to edit_user_my_post_path(@post.user,@post) do %>
+       <i class="material-icons">Edit</i>
+    <%end%>
+    <%= link_to user_my_post_path(@post.user,@post),method: :delete,
+          data: { confirm: 'Êtes-vous sûr ?' } do %>
+       <i class="material-icons">Delete</i>
+    <%end%>
+    <%= link_to user_my_posts_path do %>
+       <i class="material-icons">keyboard_backspace</i>
+    <%end%>
+  </div>
+</div>
