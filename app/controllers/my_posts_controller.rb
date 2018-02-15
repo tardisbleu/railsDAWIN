@@ -8,7 +8,7 @@ class MyPostsController < ApplicationController
         @post = MyPost.new(post_params)
         @post.user = current_user
         if @post.save
-            redirect_to my_post_path(@post)
+            redirect_to user_my_post_path(@post.user,@post)
         else
             render 'new'
         end

@@ -1,11 +1,11 @@
 <p>
-  <h1><%= @post.titre %></h1>
+  <h1><%= @post.title %></h1>
 </p>
 <p>
-  <%= image_tag(@post.vignette) %>
+  <%= image_tag(@post.picture) %>
 </p>
 <p>
-  <%= @post.chapeau %>
+  <%= @post.article %>
 </p>
 <p>
   <strong>Auteur :</strong>
@@ -13,7 +13,7 @@
 </p>
 <p>
   <strong>Date:</strong>
-  <%= @post.date %>
+  <%= @post.created_at %>
 </p>
 
 
@@ -21,13 +21,13 @@
 <br/><br/>
 <hr/>
 <br/>
-<%= link_to edit_my_post_path(@post) do %>
-   <i class="material-icons">edit</i>
+<%= link_to edit_user_my_post_path(@post.user,@post) do %>
+   <i class="material-icons">Edit</i>
 <%end%>
-<%= link_to edit_my_post_path(@post),method: :delete,
+<%= link_to user_my_post_path(@post.user,@post),method: :delete,
       data: { confirm: 'Êtes-vous sûr ?' } do %>
-   <i class="material-icons">delete</i>
+   <i class="material-icons">Delete</i>
 <%end%>
-<%= link_to my_posts_path do %>
+<%= link_to user_my_posts_path do %>
    <i class="material-icons">keyboard_backspace</i>
 <%end%>
