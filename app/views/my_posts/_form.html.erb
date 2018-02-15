@@ -1,4 +1,4 @@
-<%= form_for @post do |form| %>
+<%= form_for @post,url:[@post.user,@post] do |form| %>
   <p>
     <%= form.label :titre %><br>
     <%= form.text_field :titre %>
