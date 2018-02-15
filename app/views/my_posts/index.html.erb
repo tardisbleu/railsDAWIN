@@ -7,10 +7,9 @@
           <div class="card">
             <div class="card-image">
               <%= image_tag(post.picture) %>
-              <span class="card-title"><b><%= post.title %></b></span>
             </div>
             <div class="card-content">
-              <p class="black-text"><%= post.article %> </p>
+              <p class="black-text"><%= post.title %> </p>
             </div>
             <div class="card-action">
               <p class="black-text"> <%= post.user.fullname %> </p>
